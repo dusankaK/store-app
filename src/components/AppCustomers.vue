@@ -26,13 +26,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(customer, key) in customers" v-bind:key="key">
+                <tr v-for="(customer, id) in customers" v-bind:key="id">
                     <td>{{ customer.fullName}}</td>
                     <td>{{ customer.email}}</td>
                     <td>
                         <button class="btn btn-danger btn-sm" @click="deleteCustomer(key)">
                             <i class="fas fa-trash"></i>
                         </button>
+                        <router-link class="btn btn-light btn-sm" :to="{name: 'latest-purchases', params:{id: customer.id} }">
+                            <i class="fas fa-shopping-cart"></i>
+                        </router-link>
                     </td>
                 </tr>
             </tbody>
@@ -58,6 +61,7 @@ export default {
         deleteCustomer(customer) {
             customerService.remove(customer)
         },
+
         addNewCustomer(){
             customerService.add(this.newCustomers);
             this.newCustomers = {}

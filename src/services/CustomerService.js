@@ -38,7 +38,7 @@ const customers = [
      *
      * @returns Object
      */
-    find(id) {
+    findCustomer(id) {
       return customers.find(customer => customer.id === id);
     }
   
