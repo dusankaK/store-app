@@ -17,6 +17,9 @@
                 <tr v-for="product in products" :key="product.id">
                     <td>{{ product.name}}</td>
                     <td>{{ product.quantity}}</td>
+                    <button v-if="product.quantity > 0" @click="decrementProduct(product)" class="btn btn-danger btn-sm">-</button>
+                    <button v-else class="btn btn-danger btn-sm" disabled>-</button>
+                    <button @click="incrementProduct(product)" class="btn btn-success btn-sm">+</button>
                 </tr>
             </tbody>
         </table>
@@ -33,6 +36,16 @@ export default {
             products: productService.list(),
             searchProduct: '',
         }        
+    },
+
+    methods: {
+        incrementProduct(product){
+            productService.increment(product);
+        },
+
+        decrementProduct(product){
+            productService.decrement(product);
+        }
     },
 
     watch: {
