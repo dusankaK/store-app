@@ -29,17 +29,16 @@
 </template>
 
 <script>
-import { customerService } from "../services/CustomerService.js";
+import { customerService } from "@/services/CustomerService.js";
 
 
 export default {
     computed: {
-        customer: function(){
+        customer () {
             return customerService.findCustomer(this.$route.params.id)
         },
     }
 }
-
 </script>
 
 <style>

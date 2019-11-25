@@ -15,7 +15,7 @@ export default new Router ({
         {path: '/customers', component: Customers },
         {path: '/products', component: Products },
         {path: '/customers/:id', component: LatestPurchase, name: 'latest-purchases'},
-        {path: '/products/:id', component:PurchaseProduct, name: 'purchase-product', props: true}
+        {path: '/products/:id', component:PurchaseProduct, name: 'purchase-product'}
     ]
     
 })

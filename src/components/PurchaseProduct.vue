@@ -33,8 +33,8 @@
 </template>
 
 <script>
-import { productService } from "../services/ProductService.js";
-import{ customerService } from "../services/CustomerService.js";
+import { productService } from "@/services/ProductService.js";
+import{ customerService } from "@/services/CustomerService.js";
 
 
 export default {
