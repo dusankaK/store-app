@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr  v-for="(product, index) in products" :key="index">
+                <tr v-for="(product, index) in customer.products" :key="index">
                     <td>{{ product.name }}</td>
                 </tr>
             </tbody>
@@ -31,17 +31,13 @@
 <script>
 import { customerService } from "../services/CustomerService.js";
 
+
 export default {
     computed: {
         customer: function(){
             return customerService.findCustomer(this.$route.params.id)
-        }
+        },
     }
-
-    
-
-    
-  
 }
 
 </script>
